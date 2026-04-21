@@ -1,0 +1,101 @@
+# CREDIT CARD FRAUD DETECTION - MODEL COMPARISON RESULTS
+
+## Dataset:
+
+Total Transactions : 284,807
+Fraud Cases        : 492
+Legitimate Cases   : 284,315
+
+## Evaluation Metrics:
+
+Precision = Correct fraud predictions / All fraud predictions
+Recall    = Fraud caught / Total fraud cases
+F1 Score  = Balance of Precision and Recall
+AUC       = Ranking performance
+
+## Final Results:
+
+1. Logistic Regression
+
+---
+
+Precision : 0.681
+Recall    : 0.838
+F1 Score  : 0.752
+AUC       : 0.967
+
+Confusion Matrix:
+TN = 42619
+FP = 29
+FN = 12
+TP = 62
+
+Insight:
+High fraud detection rate (recall), suitable when catching fraud is priority.
+
+2. Random Forest
+
+---
+
+Precision : 0.836
+Recall    : 0.757
+F1 Score  : 0.794
+AUC       : 0.972
+
+Confusion Matrix:
+TN = 42637
+FP = 11
+FN = 18
+TP = 56
+
+Insight:
+Lowest false positives with strong ranking ability.
+
+3. XGBoost
+
+---
+
+Precision : 0.646
+Recall    : 0.838
+F1 Score  : 0.729
+AUC       : 0.970
+
+Confusion Matrix:
+TN = 42614
+FP = 34
+FN = 12
+TP = 62
+
+Insight:
+High recall but more false alarms in this run.
+
+4. Autoencoder
+
+---
+
+Precision : 0.843
+Recall    : 0.797
+F1 Score  : 0.819
+
+Confusion Matrix:
+Approx:
+TN = 42637
+FP = 11
+FN = 15
+TP = 59
+
+Insight:
+Best overall balance of fraud detection and alert efficiency.
+
+## Final Ranking:
+
+Best Recall     : Logistic Regression / XGBoost
+Best Precision  : Autoencoder
+Best F1 Score   : Autoencoder
+Best AUC        : Random Forest
+Best Balance    : Autoencoder
+
+## Final Conclusion:
+
+Autoencoder and Random Forest delivered the strongest practical results.
+Logistic Regression and XGBoost are strong when maximizing fraud capture is the main objective.
